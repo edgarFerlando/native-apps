@@ -3,7 +3,6 @@ pipeline:
     image: ruby
     environment:
       - FASTLANE_VERSION=2.12.0
-    commands: gem install fastlane:$FASTLANE_VERSION -NV
-  test:
-    image: ruby
-    commands: fastlane android test
+    commands: 
+        - gem install fastlane:$FASTLANE_VERSION -NV
+        - fastlane android test
