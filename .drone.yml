@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: distributedlife/android-fastlane-docker:latest
+    image: iisue/alpine-android-fastlane
     commands: 
         - gem install fastlane
         - fastlane android test
