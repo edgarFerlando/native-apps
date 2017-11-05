@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "the build worked ! The payload is $payload"

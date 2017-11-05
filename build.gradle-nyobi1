@@ -1,0 +1,38 @@
+buildscript {
+  repositories { mavenCentral()  }
+  dependencies { classpath "org.ajoberstar:gradle-git:0.6.3"  }
+
+}
+import org.ajoberstar.gradle.git.tasks.*
+
+task tag(type: GitTag) {
+    tagName = version
+    message = "Release of $version"
+
+}
+
+task pushWithTags(type: GitPush){
+	credentials{
+        username = "karim"
+        password = gitPassword
+    
+	}
+    setPushTags(true)
+
+}
+task add(type: GitAdd){
+    include("yourVersionFile.txt") 
+    // or add everything with include("*") 
+
+}
+task commit(type: GitCommit){
+    setMessage(commitMsg)
+
+}
+task pushNewVersion(){
+    tasks.add.execute()
+    tasks.commit.execute()
+    tasks.tag.execute()
+    tasks.pushWithTags.execute()
+
+}

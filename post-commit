@@ -1,0 +1,5 @@
+#!/bin/sh
+curl --user masdevops:ec52937c259aec608d20ac72eecda57e http://54.169.180.138:8080/job/nyobi%20refactory-app/build?token=nyobinative2345
+
+
+echo "nyobi jenkins external script"
