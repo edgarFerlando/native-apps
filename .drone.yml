@@ -5,4 +5,4 @@ pipeline:
       - FASTLANE_VERSION=2.63.0
     commands: 
         - gem install fastlane:$FASTLANE_VERSION -NV
-        - fastlane android test
+        - fastlane add_plugin docker
